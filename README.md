@@ -1,43 +1,50 @@
-# Chirpy Starter
+# AlphaCfter's Blog
 
-[![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
-[![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+Welcome to my stronghold!
 
-When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jekyll can only read files in the folders
-`_data`, `_layouts`, `_includes`, `_sass` and `assets`, as well as a small part of options of the `_config.yml` file
-from the theme's gem. If you have ever installed this theme gem, you can use the command
-`bundle info --path jekyll-theme-chirpy` to locate these files.
+This repository contains the source code for my personal blog, hosted at [alphacfter.github.io](https://alphacfter.github.io).
 
-The Jekyll team claims that this is to leave the ball in the user’s court, but this also results in users not being
-able to enjoy the out-of-the-box experience when using feature-rich themes.
+This blog is where I share what I'm tinkering with, including Linux internals, Java, desktop customization, virtualization and many more. It serves as my personal lab, notebook, and a place to share what I learn.
 
-To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your
-Jekyll site. The following is a list of targets:
+## Built With
 
-```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
-```
+This site is built using [Jekyll](https://jekyllrb.com/) and is based on the [**Chirpy**][chirpy] theme. Do checkout them for a cool starter page
 
-To save you time, and also in case you lose some files while copying, we extract those files/configurations of the
-latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so that you can start writing in minutes.
+## Running Locally
 
-## Usage
+To preview new posts or changes on your local machine, follow these steps:
 
-Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
+1.  **Install Dependencies**
+    This project uses [Bundler](https://bundler.io/) to manage the Ruby gems specified in the `Gemfile`.
+
+    Run the following command to install the required gems:
+    ```sh
+    bundle install
+    ```
+
+2.  **Troubleshooting (Permission Errors)**
+    If you encounter a `Bundler::PermissionError` (e.g., "error while trying to write to `/var/lib/gems/...`"), it means your user doesn't have permission to install gems to the system-wide directory.
+
+    To fix this, install the gems locally *within* this project folder by running:
+    ```sh
+    bundle install --path vendor/bundle
+    ```
+    This creates a `vendor/bundle` directory for all the project's gems. This path is already included in the `.gitignore` file, so the gems won't be committed to your repository.
+
+3.  **Preview the Site**
+    Use the provided run script to build and serve the site:
+    ```sh
+    bundle exec jekyll s -l
+    ```
+    The script will start a local Jekyll server. You can then view your blog preview by opening the "Server address" in your browser, which is typically `http://127.0.0.1:4000`.
 
 ## Contributing
 
-This repository is automatically updated with new releases from the theme repository. If you encounter any issues or want to contribute to its improvement, please visit the [theme repository][chirpy] to provide feedback.
+This is a personal blog, but if you find any bugs or have suggestions for the site's structure or theme, feel free to open an issue.
 
 ## License
 
-This work is published under [MIT][mit] License.
+This work is published under the [MIT][mit] License.
 
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
 [chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+[mit]: https://github.com/AlphaCfter/AlphaCfter.github.io/blob/main/LICENSE
